@@ -31,22 +31,29 @@ class Youtuber extends React.Component {
       </CardActions>
     </Card>*/}
     <Card style={{
-      width: '80%',
-      border: '1px solid black' ,
-      paddingTop: '5px',
-      float: 'left',
-      paddingLeft: '5px',
+      left : '-1%',
+      width: '100%',
+      height:'100%',
+      paddingTop: '1%',
+      paddingLeft: '1%',
       zIndex : 100,
       position : 'absolute',
-      textAlign : 'center',
-      left : '10%',
+      backgroundColor : 'ivory'
     }}
   >
     <CardMedia
+      style={{
+        height : '80%',
+      }}
       title={videos[this.props.i+1].title}>
-      {<iframe width="98%" height="240px" src={videos[this.props.i+1].href} title ={videos[this.props.i+1].title} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>}
+      {<iframe width="98%" height="100%" src={videos[this.props.i+1].href} title ={videos[this.props.i+1].title} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>}
     </CardMedia>
-    <CardActions disableSpacing>
+    <CardActions 
+      disableSpacing
+      style={{
+        height:'10%'
+      }}
+      >
       <a href ={videos[this.props.i+1].restaurantInfo}>식당정보</a>
     </CardActions>
   </Card>

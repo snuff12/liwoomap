@@ -27,8 +27,8 @@ function NaverMapAPI(i) {
     <NaverMap
       mapDivId={'maps-getting-started-uncontrolled'}
       style={{
-        width: '90%',
-        height: '100%',
+        width: '95%',
+        height: '95%',
         margin: 'auto',
         border: '1px solid black',
         position: 'sticky',
@@ -111,12 +111,12 @@ class App extends Component {
             zIndex : 100,
             width : '80%',
             left : '10%',
-            height: '30%',
+            height: '40%',
           }}
           >
             <NavigateBeforeIcon style ={{
               position : 'absolute',
-              left : '-5%',
+              left : '-10%',
               top : '45%',
               fontSize: 50
             }}
@@ -137,7 +137,7 @@ class App extends Component {
             />}
             <NavigateNextIcon style ={{
               position : 'absolute',
-              right : '-5%',
+              right : '-10%',
               top : '45%',
               fontSize : 50,
             }}
