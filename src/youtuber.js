@@ -10,7 +10,7 @@ class Youtuber extends React.Component {
   return (
     <div>
       
-    <Card style={{
+    {/*<Card style={{
         width: '27%',
         height: '100%',
         border: '1px solid black' ,
@@ -29,10 +29,9 @@ class Youtuber extends React.Component {
       <CardActions disableSpacing>
         <a href ={videos[this.props.i<0?videos.length-1:this.props.i].restaurantInfo}>식당정보</a>
       </CardActions>
-    </Card>
+    </Card>*/}
     <Card style={{
-      width: '40%',
-      height: '120%',
+      width: '80%',
       border: '1px solid black' ,
       paddingTop: '5px',
       float: 'left',
@@ -40,8 +39,7 @@ class Youtuber extends React.Component {
       zIndex : 100,
       position : 'absolute',
       textAlign : 'center',
-      left : '30%',
-      top : '-10%'
+      left : '10%',
     }}
   >
     <CardMedia
@@ -52,7 +50,7 @@ class Youtuber extends React.Component {
       <a href ={videos[this.props.i+1].restaurantInfo}>식당정보</a>
     </CardActions>
   </Card>
-  <Card style={{
+  {/*<Card style={{
     width: '27%',
     border: '1px solid black' ,
     paddingTop: '5px',
@@ -70,7 +68,7 @@ class Youtuber extends React.Component {
   <CardActions disableSpacing>
     <a href ={videos[this.props.i+2<videos.length?this.props.i+2:0].restaurantInfo}>식당정보</a>
   </CardActions>
-</Card>
+</Card>*/}
 </div>
   );}
 }

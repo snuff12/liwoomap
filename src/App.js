@@ -36,23 +36,24 @@ function NaverMapAPI(i) {
         zIndex : 2
 
       }}
-      center={{ lat:videos[i+1].locationX , lng:videos[i+1].locationY  }}
-      defaultZoom={13}>
-         {
-        videos.map(v=>{
-          return(
-            <div>
-              {<YoutubePopUp
-                id = {v.id}
-                title ={v.title}
-                href = {v.href}
-                restaurantInfo = {v.restaurantInfo}
-                locationX = {v.locationX}
-                locationY = {v.locationY}
-              />}
-            </div>
-          )
-        })
+      center={{lat : videos[i+1].locationX , lng:videos[i+1].locationY  }}
+      defaultZoom={13}
+    >
+      {
+      videos.map(v=>{
+        return(
+          <div>
+            {<YoutubePopUp
+              id = {v.id}
+              title ={v.title}
+              href = {v.href}
+              restaurantInfo = {v.restaurantInfo}
+              locationX = {v.locationX}
+              locationY = {v.locationY}
+            />}
+          </div>
+        )
+      })
       }
     </NaverMap>
   );
@@ -103,57 +104,57 @@ class App extends Component {
           </div>
         </RenderAfterNavermapsLoaded>
         {
-              <div style ={{
-                paddingLeft : '5px',
-                position : 'fixed',
-                bottom: '5%',
-                zIndex : 100,
-                width : '80%',
-                left : '10%',
-              }}>
-                <NavigateBeforeIcon style ={{
-                  position : 'absolute',
-                  left : '-5%',
-                  top : '45%',
-                  fontSize: 50
-
-                }}
-                  onClick ={()=> {
-                    const {i} = this.state;
-                    if(this.state.i===-1){
-                      this.setState({
-                        i: videos.length-2
-                      });
-                    }
-                    else{this.setState({
-                      i:i-1
-                    });
-                    }
-                }}/>
-                {<Youtuber
-                  i = {this.state.i}
-                />}
-                <NavigateNextIcon style ={{
-                  position : 'absolute',
-                  right : '-5%',
-                  top : '45%',
-                  fontSize : 50,
-                }}
-
-                  onClick ={()=> {
-                    const {i} = this.state;
-                    if(this.state.i>videos.length-3){
-                      this.setState({
-                        i:-1
-                      });
-                    }
-                    else{this.setState({
-                      i:i+1
-                    });
-                    }
-                  }}
-                />
-              </div>
+          <div style ={{
+            paddingLeft : '5px',
+            position : 'fixed',
+            bottom: '10%',
+            zIndex : 100,
+            width : '80%',
+            left : '10%',
+            height: '30%',
+          }}
+          >
+            <NavigateBeforeIcon style ={{
+              position : 'absolute',
+              left : '-5%',
+              top : '45%',
+              fontSize: 50
+            }}
+              onClick ={()=> {
+                const {i} = this.state;
+                if(this.state.i===-1){
+                  this.setState({
+                    i: videos.length-2
+                  });
+                }
+                else{this.setState({
+                  i:i-1
+                  });
+                }
+            }}/>
+            {<Youtuber
+              i = {this.state.i}
+            />}
+            <NavigateNextIcon style ={{
+              position : 'absolute',
+              right : '-5%',
+              top : '45%',
+              fontSize : 50,
+            }}
+              onClick ={()=> {
+                const {i} = this.state;
+                if(this.state.i>videos.length-3){
+                  this.setState({
+                    i:-1
+                  });
+                }
+                else{this.setState({
+                  i:i+1
+                });
+                }
+              }}
+            />
+          </div>
         }
       </div>
     );
