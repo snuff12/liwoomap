@@ -123,19 +123,25 @@ class App extends Component {
                 top: '3%',
                 right: '3%',
                 zIndex: 100,
-
               }}
               onClick={()=>{
                 if(navigator.geolocation){
+                  var lat;
+                  var lng;
                   navigator.geolocation.getCurrentPosition(function(position) {
-                    this.setState({
-                      locationX:position.coords.latitude,
-                      locationY:position.coords.longitude
-                    })
+                      lat=position.coords.latitude;
+                      lng=position.coords.longitude;
                   });
                 } else {
                   alert('GPS를 지원하지 않습니다');
-              }}}
+                }
+                if(lat&&lng){
+                  this.setState({
+                    locationX:lat,
+                    locationY:lng
+                  })
+                }
+              }}
             >현위치</MyLocationIcon>
             <NavigateBeforeIcon style ={{
               position : 'absolute',
