@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/liwoomap/precache-manifest.31dd42970ce496288d4acc318c7f1849.js"
+  "/liwoomap/precache-manifest.e0e36b168b8e295c2a8b4707d89964a6.js"
 );
 
 self.addEventListener('message', (event) => {
