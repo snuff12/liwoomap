@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import MyLocationIcon from '@material-ui/icons/MyLocation';
 
 
 const styles = theme =>({
@@ -22,7 +23,7 @@ const styles = theme =>({
   }
 })
 
-function NaverMapAPI(i) {
+function NaverMapAPI(locationX, locationY) {
   return (
     <NaverMap
       mapDivId={'maps-getting-started-uncontrolled'}
@@ -36,7 +37,7 @@ function NaverMapAPI(i) {
         zIndex : 2
 
       }}
-      center={{lat : videos[i+1].locationX , lng:videos[i+1].locationY  }}
+      center={{lat : locationX , lng: locationY  }}
       defaultZoom={13}
     >
       {
@@ -75,7 +76,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      i:-1
+      i:-1,
+      locationX:videos[0].locationX,
+      locationY:videos[0].locationY
     };
   }
   render(){
@@ -100,7 +103,7 @@ class App extends Component {
             zIndex: 2
           }}
           >
-            {NaverMapAPI(this.state.i)}
+            {NaverMapAPI(this.state.locationX, this.state.locationY)}
           </div>
         </RenderAfterNavermapsLoaded>
         {
@@ -114,6 +117,26 @@ class App extends Component {
             height: '40%',
           }}
           >
+            <MyLocationIcon
+              style={{
+                position: 'fixed',
+                top: '3%',
+                right: '3%',
+                zIndex: 100,
+
+              }}
+              onClick={()=>{
+                if(navigator.geolocation){
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    this.setState({
+                      locationX:position.coords.latitude,
+                      locationY:position.coords.longitude
+                    })
+                  });
+                } else {
+                  alert('GPS를 지원하지 않습니다');
+              }}}
+            >현위치</MyLocationIcon>
             <NavigateBeforeIcon style ={{
               position : 'absolute',
               left : '-10%',
@@ -124,11 +147,15 @@ class App extends Component {
                 const {i} = this.state;
                 if(this.state.i===-1){
                   this.setState({
-                    i: videos.length-2
+                    i: videos.length-2,
+                    locationX: videos[videos.length-1].locationX,
+                    locationY: videos[videos.length-1].locationY
                   });
                 }
                 else{this.setState({
-                  i:i-1
+                  i:i-1,
+                  locationX: videos[i].locationX,
+                  locationY: videos[i].locationY
                   });
                 }
             }}/>
@@ -145,11 +172,15 @@ class App extends Component {
                 const {i} = this.state;
                 if(this.state.i>videos.length-3){
                   this.setState({
-                    i:-1
+                    i:-1,
+                    locationX: videos[0].locationX,
+                    locationY: videos[0].locationY
                   });
                 }
                 else{this.setState({
-                  i:i+1
+                  i:i+1,
+                  locationX: videos[i+2].locationX,
+                  locationY: videos[i+2].locationY
                 });
                 }
               }}

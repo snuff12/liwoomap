@@ -37,7 +37,7 @@ class YoutubePopUp extends React.Component{
             onClose={handleClose}>
             <DialogTitle>{this.props.title}</DialogTitle>
             <DialogContent>
-            <iframe width="320px" height="180px" src={this.props.href} title ={this.props.title} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+            <iframe width="100%" height="180px" src={this.props.href} title ={this.props.title} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
             </DialogContent>
             <DialogActions>
               <a href = {this.props.restaurantInfo}>식당정보</a>
