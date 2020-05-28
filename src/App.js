@@ -3,6 +3,7 @@ import './App.css';
 import Youtuber from './youtuber.js';
 import videos from './video.js';
 import YoutubePopUp from './youtubePopUp.js';
+import getLocation from './getLocation.js';
 import { withStyles } from '@material-ui/core/styles';
 import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
@@ -125,22 +126,13 @@ class App extends Component {
                 zIndex: 100,
               }}
               onClick={()=>{
-                if(navigator.geolocation){
-                  var lat;
-                  var lng;
-                  navigator.geolocation.getCurrentPosition(function(position) {
-                      lat=position.coords.latitude;
-                      lng=position.coords.longitude;
-                  });
-                } else {
-                  alert('GPS를 지원하지 않습니다');
-                }
-                if(lat&&lng){
-                  this.setState({
-                    locationX:lat,
-                    locationY:lng
-                  })
-                }
+                let x, y;
+                getLocation(x,y);
+                alert(x, y);
+                this.setState({
+                  locationX:x,
+                  locationY:y
+                })
               }}
             >현위치</MyLocationIcon>
             <NavigateBeforeIcon style ={{
