@@ -4,7 +4,7 @@ import Router from './Components/Routes.js';
 export default function App(){
   return(
     <div>
-      <Router basename = '/liwoomap'/>
+      <Router/>
     </div>
   )
 }
