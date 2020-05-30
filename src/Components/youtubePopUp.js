@@ -27,11 +27,11 @@ class YoutubePopUp extends React.Component{
     return(
         <div>
           <Marker
-                key ={this.props.id}
-                position ={new navermaps.LatLng(this.props.locationX, this.props.locationY)}
-                animation={0}
-                onClick={handleClickOpen}
-                />
+            key ={this.props.id}
+            position ={new navermaps.LatLng(this.props.locationX, this.props.locationY)}
+            animation={0}
+            onClick={handleClickOpen}
+          />
           <Dialog
             open={this.state.open}
             onClose={handleClose}>
