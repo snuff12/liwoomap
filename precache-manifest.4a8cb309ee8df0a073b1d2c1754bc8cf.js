@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16002d71cb203160cffba34368eb4dd0",
+    "revision": "db90fe5386ef9f7996ca6d1c76bd9975",
     "url": "/liwoomap/index.html"
   },
   {
-    "revision": "b212fef4e840d8da4530",
+    "revision": "e1ca8fc29151130302a9",
     "url": "/liwoomap/static/css/main.3a6c4815.chunk.css"
   },
   {
-    "revision": "86884bdc4968e0cadd06",
-    "url": "/liwoomap/static/js/2.d8582c89.chunk.js"
+    "revision": "24332792169c33d2beac",
+    "url": "/liwoomap/static/js/2.6f2c5f80.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/liwoomap/static/js/2.d8582c89.chunk.js.LICENSE.txt"
+    "url": "/liwoomap/static/js/2.6f2c5f80.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b212fef4e840d8da4530",
-    "url": "/liwoomap/static/js/main.25cdea17.chunk.js"
+    "revision": "e1ca8fc29151130302a9",
+    "url": "/liwoomap/static/js/main.372e460b.chunk.js"
   },
   {
     "revision": "f56a688edb23270fa743",
