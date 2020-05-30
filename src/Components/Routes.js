@@ -4,7 +4,7 @@ import Map from "../Screens/Map.js";
 import Footer from './Footer.js';
 
 export default () => (
-  <Router basename ='/'>
+  <Router basename ='/'></Router>
     <Footer/>
     <Route path="/map" component={Map} />
   </Router>
