@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import VideoAtTheBottom from '../Components/VideoAtTheBottom.js';
 import videos from '../video.js';
-import YoutubePopUp from '../Components/youtubePopUp.js';
+import YoutubePopUp from '../Components/YoutubePopUp.js';
 import { withStyles } from '@material-ui/core/styles';
 import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
@@ -18,7 +18,7 @@ const styles = theme =>({
   }
 })
 
-function NaverMapAPI(locationX, locationY) {
+function NaverMapAPI(locationX, locationY, stateI) {
   return (
     <NaverMap
       mapDivId={'maps-getting-started-uncontrolled'}
@@ -35,7 +35,7 @@ function NaverMapAPI(locationX, locationY) {
       defaultZoom={13}
     >
       {
-      videos.map(v=>{
+      videos.map((v,videoIndex)=>{
         return(
           <div>
             {<YoutubePopUp
@@ -45,6 +45,8 @@ function NaverMapAPI(locationX, locationY) {
               restaurantInfo = {v.restaurantInfo}
               locationX = {v.locationX}
               locationY = {v.locationY}
+              stateI ={stateI}
+              videoIndex ={videoIndex}
             />}
           </div>
         )
@@ -101,7 +103,7 @@ class Map extends Component {
             zIndex: 2
           }}
           >
-            {NaverMapAPI(this.state.locationX, this.state.locationY)}
+            {NaverMapAPI(this.state.locationX, this.state.locationY, this.state.i)}
           </div>
         </RenderAfterNavermapsLoaded>
         {
