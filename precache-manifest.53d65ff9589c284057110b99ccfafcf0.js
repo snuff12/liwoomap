@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db90fe5386ef9f7996ca6d1c76bd9975",
+    "revision": "36031a6da3749ca061c3bf4815280144",
     "url": "/liwoomap/index.html"
   },
   {
-    "revision": "e1ca8fc29151130302a9",
+    "revision": "65e013fb2bdb74c7479c",
     "url": "/liwoomap/static/css/main.3a6c4815.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/liwoomap/static/js/2.6f2c5f80.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e1ca8fc29151130302a9",
-    "url": "/liwoomap/static/js/main.372e460b.chunk.js"
+    "revision": "65e013fb2bdb74c7479c",
+    "url": "/liwoomap/static/js/main.00b76b2d.chunk.js"
   },
   {
     "revision": "f56a688edb23270fa743",
